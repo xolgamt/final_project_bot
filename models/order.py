@@ -24,17 +24,3 @@ class Order(Base):
 
     def __repr__(self):
         return f'Order(order_id={self.order_id}, client_id={self.client_id}, total_price={self.total_price})'
-
-    # def create(self, session):
-    #     product = session.query(Product).filter_by(product_id=self.product_id).first()
-    #     if product is None:
-    #         raise ValueError("Invalid product ID")
-    #
-    #     if product.quantity_available < self.quantity:
-    #         raise ValueError("Not enough quantity available")
-    #
-    #     product.quantity_available -= self.quantity
-    #     self.total_price = product.price * self.quantity
-    #
-    #     session.add(self)
-    #     session.commit()
