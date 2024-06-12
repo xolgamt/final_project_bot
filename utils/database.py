@@ -115,20 +115,6 @@ def delete_basket(client_id: Union[int, None]):
 
 
 
-# async def delete_basket_async(client_id: Union[int, None]):
-#     """Deleting existing basket by client's id. Async function"""
-#     if client_id is None:
-#         raise ValueError("None value provided.")
-#     async with AsyncSession() as session:
-#         async with session.begin():
-#             client = await session.query(Client).filter(Client.client_id == client_id).first()
-#             if client is not None and client.baskets:
-#                 basket = client.baskets[0]  # assuming there is only one basket per client for now
-#                 await session.delete(basket)
-#                 await session.close()
-
-
-
 async def add_item_to_basket(client_id: Union[int, None], product_id: Union[int, None], price: Union[float, None],
                   quantity: Union[int, None] = 1):
     """Adds new items to client´s basket. If there is no basket yet - creates it."""
